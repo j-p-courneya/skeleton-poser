@@ -1,0 +1,17 @@
+{
+  "name": "skeleton-poser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pose a 3D skeleton in the browser and export ink-style line art (PNG/SVG) for screen printing.",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --minify --format=iife --target=es2020 --outfile=dist/app.js && node -e \"require('fs').copyFileSync('src/index.html','dist/index.html')\"",
+    "dev": "node -e \"require('fs').mkdirSync('dist',{recursive:true});require('fs').copyFileSync('src/index.html','dist/index.html')\" && esbuild src/main.js --bundle --format=iife --target=es2020 --outfile=dist/app.js --sourcemap --watch --servedir=dist --serve=5173"
+  },
+  "dependencies": {
+    "imagetracerjs": "^1.2.6",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
