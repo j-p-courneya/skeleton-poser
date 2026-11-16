@@ -12,6 +12,8 @@ transparent PNG (up to 6000 px) or vector SVG with ink and bone fill as separate
 - **Export:** transparent PNG at print size, or SVG traced from the ink render, both cropped to the artwork.
 - **Pose library:** save your own poses and move them between machines as a JSON file.
 
+**Live app:** https://j-p-courneya.github.io/skeleton-poser/
+
 Everything runs in the browser. There is no server code, no account, and no data leaves your machine.
 
 ## Use it right now
@@ -37,8 +39,9 @@ npm run build    # writes the production files to dist/
 `dist/` is a static site with two files (`index.html`, `app.js`). Any static host works:
 
 - A machine on your own network: copy `dist/` behind nginx or Caddy, or run `npx serve dist`.
-- GitHub Pages, Netlify or Cloudflare Pages: point the site at `dist/`, or set the build command to
-  `npm run build` and the output folder to `dist`.
+- GitHub Pages: this repo already does it. `.github/workflows/pages.yml` rebuilds and publishes `dist/`
+  on every push to `main`.
+- Netlify or Cloudflare Pages: set the build command to `npm run build` and the output folder to `dist`.
 
 ## Where things live
 
@@ -58,3 +61,7 @@ Saved poses are kept in the browser's local storage for the address you open the
 - three.js (MIT) for 3D
 - imagetracerjs (Unlicense) for tracing the ink render to SVG paths
 - esbuild (MIT) for bundling
+
+## License
+
+MIT. See `LICENSE`. The license covers this software. Artwork you make with it is yours.
